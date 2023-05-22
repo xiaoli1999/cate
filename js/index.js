@@ -1,4 +1,4 @@
-// 可以搜索的dom
+// searchable dom
 const searchDom = [
 	{
 		img: "./image/Gunkan.PNG",
@@ -28,13 +28,13 @@ const selectArr = ["GUNKAN", "INARI", "NIGIRI", "TEMAKI"]
 
 
 window.addEventListener("DOMContentLoaded", () => {
-	// 初次加载页面  加载历史记录
+	// Initial page load Load history
 	createHistory()
 
-	// 监听搜索输入文本框
+	// Listen to the search input text box
 	document.querySelector("#searchInput").addEventListener("input", (e) => {
 
-		// 过滤
+		// filter
 		const res = searchDom.filter((v) => {
 			return v.title.includes(e.target.value)
 		})
@@ -43,21 +43,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-	// 监听计算输入文本框
+	// Monitor calculation input text box
 	document.querySelector("#calcInput").addEventListener("input", (e) => {
 		const value = parseInt(e.target.value)
 		const value2 = parseInt(document.querySelector("#calcSelect").value)
 		document.querySelector("#calcResult").innerHTML = isNaN(value * value2) ? "" : value * value2
 	})
 
-	// 监听计算 选择输入框
+	// Monitor calculation Select the input box
 	document.querySelector("#calcSelect").addEventListener("change", (e) => {
 		const value = parseInt(e.target.value)
 		const value2 = parseInt(document.querySelector("#calcInput").value)
 		document.querySelector("#calcResult").innerHTML = isNaN(value * value2) ? "" : value * value2
 	})
 
-	// 监听计算点击按钮
+	// Listening to compute button clicks
 	document.querySelector("#calcClick").addEventListener("click", () => {
 		const n = getNowTime()
 		const value = selectArr[document.querySelector("#calcSelect").value - 1]
@@ -69,24 +69,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-// 创建 一个 搜索的结果
+// create a search result
 function CreateSearchResult(res) {
 
 	const searchUl = document.querySelector("#searchUL")
 	searchUl.innerHTML = ""
 
 	res.forEach(element => {
-		// 创建一个img标签
+		// Create an img tag
 		const img = document.createElement("img")
 		img.src = element.img
-		// 创建h3标签
+		// Create h3 tags
 		const h3 = document.createElement("h3")
 		h3.innerHTML = element.title
-		// 创建一个p
+		// create a p
 		const p = document.createElement("p")
 		p.innerHTML = element.price
 
-		// 创建一个li
+		// creart a li
 		const li = document.createElement('li')
 		li.appendChild(img)
 		li.appendChild(h3)
@@ -98,7 +98,7 @@ function CreateSearchResult(res) {
 }
 
 
-// 获取当前时间
+// get current time
 function getNowTime() {
 	const d = new Date()
 	const y = d.getFullYear()
@@ -108,12 +108,12 @@ function getNowTime() {
 	return `${day}/${m}/${y}`
 }
 
-// 储存记录
+// save records
 function storeHistory(obj) {
 	let h = localStorage.getItem("history")
-	// 判断是否存在历史记录
+	// Determine whether there is a history
 	if (h == null) {
-		// 等于空创建新的数组
+		// equal to empty creates new array
 		h = []
 	} else {
 		h = JSON.parse(h)
@@ -121,7 +121,7 @@ function storeHistory(obj) {
 
 	h.unshift(obj)
 
-	// 如果长度大于7则出栈
+	// Pop if the length is greater than 7
 	if (h.length > 7) {
 		h.pop()
 	}
@@ -129,25 +129,25 @@ function storeHistory(obj) {
 	localStorage.setItem("history", JSON.stringify(h))
 
 
-	// 刷新
+	// refresh
 	createHistory()
 }
 
-// 创建历史记录
+// create history
 function createHistory() {
 	const list = document.querySelectorAll(".historyList")
 
 	let h = localStorage.getItem("history")
-	// 判断是否存在历史记录
+	// Determine whether there is a history
 	if (h == null) {
-		// 退出
+		// quit
 		return
 	} else {
 		h = JSON.parse(h)
 	}
 	list.forEach((v, i) => {
 
-		// 防止数组越界
+		// prevent array out of bounds
 		if (i >= h.length) {
 			return
 		}
