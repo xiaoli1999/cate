@@ -1,0 +1,32 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+main .main {
+  width: 1280px;
+  background: #FFFFFF80;
+  margin: 20px 100px;
+}
+main .main > .title {
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+}
+main .main .comment {
+  margin: 26px 32px;
+  background: #fff;
+  min-height: 348px;
+}
+@media screen and (max-width: 1200px) {
+  main {
+    justify-content: center;
+  }
+  main .main {
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 20px 50px;
+  }
+}
+/*# sourceMappingURL=cate.css.map */
