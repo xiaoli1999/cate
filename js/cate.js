@@ -42,7 +42,45 @@ new Vue({
 					desc: 'Temaki test data.There are countless varieties of sushi rolls differing in ingredients and thickness.Sushi rolls prepared "inside out"are very popular outside of Japan,but rarely found in Japan.'
 				}
 			],
-			selectIndex: 0
+			selectIndex: 0,
+			showComment: true,
+			cardList: [
+				{
+					img: './image/Gunkan.PNG',
+					tag: ['fish roe', 'sea weed', 'rice'],
+					comment: 'The delicate seaweed wrap embraces a generous mound of sushi rice, crowned with a burst of flavorsome toppings. Each bite is a harmonious fusion of textures and tastes, leaving me craving for more. It\'s a truly exquisite culinary experience.',
+					star: 4,
+					date: '2023-05-31 22:16:12'
+				},
+				{
+					img: './image/Gunkan.PNG',
+					tag: ['fish roe', 'sea weed', 'rice'],
+					comment: 'I can\'t resist the delicate and flavorful goodness of inari. These sweet and savory pouches of seasoned rice wrapped in sweet tofu skin are simply irresistible. The combination of tender rice and the subtle sweetness of the tofu creates a culinary experience that always',
+					star: 5,
+					date: '2023-05-31 21:50:02'
+				},
+				{
+					img: './image/Nigiri.PNG',
+					tag: ['fish roe', 'sea weed', 'rice'],
+					comment: 'The delicate slice of fresh fish, gently draped over a small mound of perfectly seasoned rice, creates a harmonious symphony of flavors and textures in each bite. It\'s a humble yet exquisite culinary experience that transports me to the heart of Japan.',
+					star: 4.5,
+					date: '2023-05-31 21:44:28'
+				},
+				{
+					img: './image/Nigiri.PNG',
+					tag: ['fish roe', 'sea weed', 'rice'],
+					comment: 'The delicate slice of fresh fish, gently draped over a small mound of perfectly seasoned rice, creates a harmonious symphony of flavors and textures in each bite. It\'s a humble yet exquisite culinary experience that transports me to the heart of Japan.',
+					star: 4.5,
+					date: '2023-05-31 21:44:28'
+				}
+			],
+			commentForm: {
+				img: '',
+				tag: [],
+				desc: '',
+				star: 0,
+				date: ''
+			}
 		}
 	},
 	mounted() {

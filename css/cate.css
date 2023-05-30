@@ -14,9 +14,107 @@ main .main > .title {
   color: #000000;
 }
 main .main .comment {
+  box-sizing: border-box;
   margin: 26px 32px;
+  padding: 24px;
   background: #fff;
   min-height: 348px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .main .comment > img {
+  width: 34%;
+  object-fit: contain;
+}
+main .main .comment .comment-intro {
+  font-size: 96px;
+  margin: 0 auto;
+  color: #98C04D;
+  -webkit-text-stroke: 4px #000;
+}
+main .main .comment .comment-intro > div {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+main .main .comment .comment-intro > div > p {
+  display: flex;
+  justify-content: center;
+}
+main .main .comment .comment-intro > div > p > img {
+  width: 80px;
+  margin-left: 12px;
+}
+main .main .card-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  margin: 26px 32px;
+}
+main .main .card-wrap .card {
+  box-sizing: border-box;
+  width: 288px;
+  margin-right: 20px;
+  height: 388px;
+  padding: 8px;
+  background: #98C04D;
+  border: 5px solid #000000;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+main .main .card-wrap .card .card-head {
+  display: flex;
+}
+main .main .card-wrap .card .card-head > img {
+  width: 68px;
+  border-radius: 68px;
+  margin-right: 8px;
+}
+main .main .card-wrap .card .card-head > p span {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+main .main .card-wrap .card .card-head > p span.el-tag--small {
+  padding: 0 4px;
+}
+main .main .card-wrap .card .card-star {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  font-size: 12px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+main .main .card-wrap .card .card-star .el-rate__icon {
+  font-size: 16px;
+  margin-right: 4px;
+}
+main .main .card-wrap .card .card-desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+main .main .card-wrap .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #D9D9D9;
+}
+main .main .card-wrap .empty div,
+main .main .card-wrap .empty img {
+  cursor: pointer;
+}
+main .main .card-wrap .empty div {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
 }
 @media screen and (max-width: 1200px) {
   main {

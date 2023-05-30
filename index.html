@@ -160,7 +160,40 @@
 		<main>
 			<div class="main">
 				<div class="title">food record</div>
-				<div class="comment"></div>
+				<div class="comment">
+					<img src="./image/Sushi.png" alt="">
+					<div v-if="showComment" class="comment-intro">
+						<div>
+							SUSHI
+							<p>
+								<img src="./image/pixel-sushi.png" alt="">
+								<img src="./image/pixel-sushi.png" alt="">
+								<img src="./image/pixel-sushi.png" alt="">
+							</p>
+						</div>
+						<div>EVALUATION</div>
+					</div>
+					<div v-else></div>
+				</div>
+				<div class="card-wrap">
+					<div class="card empty">
+						<img src="./image/Add.png" alt="">
+						<div>click to add comment</div>
+					</div>
+					<div v-for="(item, index) in cardList" :key="index" class="card">
+						<div class="card-head">
+							<img :src="item.img" alt="">
+							<p>
+								<el-tag v-for="(tag, tagIndex) in item.tag" :key="tagIndex" type="info" size="small">{{ tag }}</el-tag>
+							</p>
+						</div>
+						<div class="card-star">
+							<el-rate v-model="item.star" disabled></el-rate>
+							<span>{{ item.date }}</span>
+						</div>
+						<div class="card-desc">{{ item.comment }}</div>
+					</div>
+				</div>
 			</div>
 		</main>
 	</div>
