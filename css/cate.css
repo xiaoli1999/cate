@@ -47,7 +47,6 @@ main .main .comment .comment-intro > div > p > img {
   margin-left: 12px;
 }
 main .main .card-wrap {
-  width: 100%;
   display: flex;
   align-items: center;
   overflow-y: auto;
