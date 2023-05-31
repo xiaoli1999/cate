@@ -21,7 +21,6 @@ main .main .comment {
   min-height: 348px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 main .main .comment > img {
   width: 34%;
@@ -29,7 +28,7 @@ main .main .comment > img {
 }
 main .main .comment .comment-intro {
   font-size: 96px;
-  margin: 0 auto;
+  margin: 2% auto 0;
   color: #98C04D;
   -webkit-text-stroke: 4px #000;
 }
@@ -45,6 +44,60 @@ main .main .comment .comment-intro > div > p {
 main .main .comment .comment-intro > div > p > img {
   width: 80px;
   margin-left: 12px;
+}
+main .main .comment .comment-info {
+  flex: 1;
+  height: 100%;
+  margin-left: 24px;
+}
+main .main .comment .comment-info .comment-top {
+  display: flex;
+  margin-top: 24px;
+}
+main .main .comment .comment-info .comment-top .comment-top-empty {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  background: #D9D9D9;
+  cursor: pointer;
+}
+main .main .comment .comment-info .comment-top .comment-top-empty > img {
+  width: 48px;
+  object-fit: contain;
+}
+main .main .comment .comment-info .comment-top .comment-top-avatar {
+  width: 180px;
+}
+main .main .comment .comment-info .comment-top .comment-top-avatar > img {
+  width: 180px;
+}
+main .main .comment .comment-info .comment-top .comment-top-tag {
+  margin-left: 18px;
+  flex: 1;
+}
+main .main .comment .comment-info .comment-top .comment-top-tag > span {
+  margin-left: 12px;
+  margin-bottom: 12px;
+}
+main .main .comment .comment-info .comment-bot {
+  display: flex;
+  margin-top: 36px;
+}
+main .main .comment .comment-info .comment-bot .comment-save {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #D186FF 0%, #6DB3FF 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 24px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 main .main .card-wrap {
   display: flex;
@@ -109,11 +162,26 @@ main .main .card-wrap .empty img {
   cursor: pointer;
 }
 main .main .card-wrap .empty div {
-  margin-top: 30px;
+  margin-top: 12px;
   font-weight: 400;
   font-size: 15px;
   text-align: center;
   color: #000000;
+}
+.dialog {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog > img {
+  width: 16%;
+  object-fit: contain;
+  transition: all 0.24s;
+  cursor: pointer;
+}
+.dialog > img:hover {
+  transform: scale(1.2);
 }
 @media screen and (max-width: 1200px) {
   main {

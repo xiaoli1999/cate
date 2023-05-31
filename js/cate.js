@@ -43,7 +43,7 @@ new Vue({
 				}
 			],
 			selectIndex: 0,
-			showComment: true,
+			showComment: false,
 			cardList: [
 				{
 					img: './image/Gunkan.PNG',
@@ -76,14 +76,50 @@ new Vue({
 			],
 			commentForm: {
 				img: '',
-				tag: [],
+				tag: ['rice', 'cucumber'],
+				comment: '',
+				star: 0,
+				date: ''
+			},
+			inputVisible: false,
+			inputValue: '',
+			showSelectAvatar: false
+		}
+	},
+	methods: {
+		showInput() {
+			this.inputVisible = true;
+			this.$nextTick(_ => {
+				this.$refs.saveTagInput.$refs.input.focus();
+			});
+		},
+		handleInputConfirm() {
+			let inputValue = this.inputValue;
+			if (inputValue) {
+				this.commentForm.tag.push(inputValue);
+			}
+			this.inputVisible = false;
+			this.inputValue = '';
+		},
+		selectAvatar (url) {
+			this.commentForm.img = url
+			this.showSelectAvatar = false
+		},
+		save () {
+			if (!this.commentForm.img) return this.$message.error('please choose avatar')
+			if (!this.commentForm.comment) return this.$message.error('please comment')
+
+			this.cardList.unshift(this.commentForm)
+			this.resetForm()
+		},
+		resetForm() {
+			this.commentForm = {
+				img: '',
+				tag: ['rice', 'cucumber'],
 				desc: '',
 				star: 0,
 				date: ''
 			}
 		}
-	},
-	mounted() {
-		this.$message.success('测试ui组件')
 	}
 })

@@ -22,7 +22,6 @@ main {
             min-height: 348px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
 
             > img {
                 width: 34%;
@@ -31,7 +30,7 @@ main {
 
             .comment-intro {
                 font-size: 96px;
-                margin: 0 auto;
+                margin: 2% auto 0;
                 color: #98C04D;
                 -webkit-text-stroke: 4px #000;
 
@@ -52,8 +51,68 @@ main {
                 }
             }
 
-            .comment-content {
+            .comment-info{
+                flex: 1;
+                height: 100%;
+                margin-left: 24px;
 
+                .comment-top {
+                    display: flex;
+                    margin-top: 24px;
+
+                    .comment-top-empty {
+                        width: 160px;
+                        height: 100px;
+                        display: flex;
+                        justify-content: center;
+                        background: #D9D9D9;
+                        cursor: pointer;
+
+                        > img {
+                            width: 48px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .comment-top-avatar {
+                        width: 180px;
+
+                        > img {
+                            width: 180px;
+                        }
+                    }
+
+                    .comment-top-tag {
+                        margin-left: 18px;
+                        flex: 1;
+
+                        > span{
+                            margin-left: 12px;
+                            margin-bottom: 12px;
+                        }
+                    }
+                }
+
+                .comment-bot {
+                    display: flex;
+                    margin-top: 36px;
+
+                    .comment-save {
+                        width: 84px;
+                        height: 84px;
+                        border-radius: 50%;
+                        background: linear-gradient(180deg, #D186FF 0%, #6DB3FF 100%);
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                        font-size: 24px;
+                        color: #000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 24px;
+                        flex-shrink: 0;
+                        cursor: pointer;
+                    }
+                }
             }
         }
 
@@ -130,13 +189,31 @@ main {
                 }
 
                 div {
-                    margin-top: 30px;
+                    margin-top: 12px;
                     font-weight: 400;
                     font-size: 15px;
                     text-align: center;
                     color: #000000;
                 }
             }
+        }
+    }
+}
+
+.dialog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+        width: 16%;
+        object-fit: contain;
+        transition: all .24s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
         }
     }
 }

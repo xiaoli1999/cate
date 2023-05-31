@@ -162,7 +162,7 @@
 				<div class="title">food record</div>
 				<div class="comment">
 					<img src="./image/Sushi.png" alt="">
-					<div v-if="showComment" class="comment-intro">
+					<div v-if="!showComment" class="comment-intro">
 						<div>
 							SUSHI
 							<p>
@@ -173,10 +173,28 @@
 						</div>
 						<div>EVALUATION</div>
 					</div>
-					<div v-else></div>
+					<div v-else class="comment-info">
+						<div class="comment-top">
+							<div v-if="!commentForm.img" class="comment-top-empty" @click="showSelectAvatar = true">
+								<img src="./image/Add.png" alt="">
+							</div>
+							<div v-else class="comment-top-avatar">
+								<img :src="commentForm.img" alt="">
+							</div>
+							<div class="comment-top-tag">
+								<el-tag v-for="tag in commentForm.tag" :key="tag" :disable-transitions="false">{{ tag }}</el-tag>
+								<el-input class="input-new-tag" v-if="inputVisible" v-model="inputValue" ref="saveTagInput" size="small" style="width: 88px" @keyup.enter.native="handleInputConfirm" @blur="handleInputConfirm"></el-input>
+								<el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+							</div>
+						</div>
+						<div class="comment-bot">
+							<el-input type="textarea" :autosize="{ minRows: 4, maxRows: 6 }" placeholder="comment..." v-model="commentForm.comment"></el-input>
+							<div class="comment-save" @click="save">save</div>
+						</div>
+					</div>
 				</div>
 				<div class="card-wrap">
-					<div class="card empty">
+					<div v-if="!showComment" class="card empty" @click="showComment = true">
 						<img src="./image/Add.png" alt="">
 						<div>click to add comment</div>
 					</div>
@@ -196,6 +214,17 @@
 				</div>
 			</div>
 		</main>
+
+		<el-dialog title="choose avatar" :visible.sync="showSelectAvatar" width="30%">
+			<div class="dialog">
+				<img src="./image/Gunkan.PNG" alt="" @click="selectAvatar('./image/Gunkan.PNG')">
+				<img src="./image/Inari.PNG" alt="" @click="selectAvatar('./image/Inari.PNG')">
+				<img src="./image/Nigiri.PNG" alt="" @click="selectAvatar('./image/Nigiri.PNG')">
+				<img src="./image/Norimaki.PNG" alt="" @click="selectAvatar('./image/Norimaki.PNG')">
+				<img src="./image/Oshizushi.PNG" alt="" @click="selectAvatar('./image/Oshizushi.PNG')">
+				<img src="./image/Temaki.PNG" alt="" @click="selectAvatar('./image/Temaki.PNG')">
+			</div>
+		</el-dialog>
 	</div>
 </body>
 
