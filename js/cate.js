@@ -50,28 +50,32 @@ new Vue({
 					tag: ['fish roe', 'sea weed', 'rice'],
 					comment: 'The delicate seaweed wrap embraces a generous mound of sushi rice, crowned with a burst of flavorsome toppings. Each bite is a harmonious fusion of textures and tastes, leaving me craving for more. It\'s a truly exquisite culinary experience.',
 					star: 4,
-					date: '2023-05-31 22:16:12'
+					date: '2023-05-31 22:16:12',
+					show: false
 				},
 				{
 					img: './image/Gunkan.PNG',
 					tag: ['fish roe', 'sea weed', 'rice'],
 					comment: 'I can\'t resist the delicate and flavorful goodness of inari. These sweet and savory pouches of seasoned rice wrapped in sweet tofu skin are simply irresistible. The combination of tender rice and the subtle sweetness of the tofu creates a culinary experience that always',
 					star: 5,
-					date: '2023-05-31 21:50:02'
+					date: '2023-05-31 21:50:02',
+					show: false
 				},
 				{
 					img: './image/Nigiri.PNG',
 					tag: ['fish roe', 'sea weed', 'rice'],
 					comment: 'The delicate slice of fresh fish, gently draped over a small mound of perfectly seasoned rice, creates a harmonious symphony of flavors and textures in each bite. It\'s a humble yet exquisite culinary experience that transports me to the heart of Japan.',
 					star: 4.5,
-					date: '2023-05-31 21:44:28'
+					date: '2023-05-31 21:44:28',
+					show: false
 				},
 				{
 					img: './image/Nigiri.PNG',
 					tag: ['fish roe', 'sea weed', 'rice'],
 					comment: 'The delicate slice of fresh fish, gently draped over a small mound of perfectly seasoned rice, creates a harmonious symphony of flavors and textures in each bite. It\'s a humble yet exquisite culinary experience that transports me to the heart of Japan.',
 					star: 4.5,
-					date: '2023-05-31 21:44:28'
+					date: '2023-05-31 21:44:28',
+					show: false
 				}
 			],
 			commentForm: {
@@ -83,7 +87,9 @@ new Vue({
 			},
 			inputVisible: false,
 			inputValue: '',
-			showSelectAvatar: false
+			showSelectAvatar: false,
+			star: 0,
+			date: ''
 		}
 	},
 	methods: {
@@ -109,7 +115,7 @@ new Vue({
 			if (!this.commentForm.img) return this.$message.error('please choose avatar')
 			if (!this.commentForm.comment) return this.$message.error('please comment')
 
-			this.cardList.unshift(this.commentForm)
+			this.cardList.unshift({ ...this.commentForm, show: false })
 			this.resetForm()
 		},
 		resetForm() {
@@ -120,6 +126,16 @@ new Vue({
 				star: 0,
 				date: ''
 			}
+		},
+		saveDate (i) {
+			this.cardList[i].star = this.star
+			this.cardList[i].date = this.date
+			this.resetDate(i)
+		},
+		resetDate (i) {
+			this.cardList[i].show = false
+			this.star = 0
+			this.date = ''
 		}
 	}
 })

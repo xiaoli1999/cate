@@ -106,6 +106,7 @@ main .main .card-wrap {
   margin: 26px 32px;
 }
 main .main .card-wrap .card {
+  position: relative;
   box-sizing: border-box;
   width: 288px;
   margin-right: 20px;
@@ -115,6 +116,7 @@ main .main .card-wrap .card {
   border: 5px solid #000000;
   border-radius: 20px;
   flex-shrink: 0;
+  overflow: hidden;
 }
 main .main .card-wrap .card .card-head {
   display: flex;
@@ -138,7 +140,6 @@ main .main .card-wrap .card .card-star {
   color: #333;
   font-size: 12px;
   padding: 8px 0;
-  cursor: pointer;
 }
 main .main .card-wrap .card .card-star .el-rate__icon {
   font-size: 16px;
@@ -149,6 +150,52 @@ main .main .card-wrap .card .card-desc {
   font-size: 14px;
   line-height: 18px;
   color: #000000;
+}
+main .main .card-wrap .card .card-edit {
+  position: absolute;
+  font-size: 18px;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+  cursor: pointer;
+}
+main .main .card-wrap .card .card-date {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 0 68%;
+  background: #0008;
+  background: linear-gradient(to bottom left, #3d3333 0, #3d3333cc 40%, #ae878890 100%);
+  opacity: 0;
+  transition: all 0.24s;
+  transform: scale(0);
+  transform-origin: top right;
+  display: flex;
+  flex-direction: column;
+}
+main .main .card-wrap .card .card-date > i {
+  color: #fff;
+  font-size: 20px;
+  margin: 12px 0 0 12px;
+  cursor: pointer;
+}
+main .main .card-wrap .card .card-date .card-date-star {
+  display: block;
+  margin: 88px auto 16px;
+}
+main .main .card-wrap .card .card-date .card-date-picker {
+  display: block;
+  margin: 16px auto;
+}
+main .main .card-wrap .card .card-date .card-date-btn {
+  display: block;
+  margin: 16px auto;
+}
+main .main .card-wrap .card .card-date.active {
+  transform: scale(1);
+  opacity: 1;
 }
 main .main .card-wrap .empty {
   display: flex;

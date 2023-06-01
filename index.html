@@ -210,6 +210,15 @@
 							<span>{{ item.date }}</span>
 						</div>
 						<div class="card-desc">{{ item.comment }}</div>
+                        <i class="el-icon-edit-outline card-edit" @click="cardList[index].show = true"></i>
+
+                        <div class="card-date" :class="item.show ? 'active' : ''">
+                            <i class="el-icon-back card-back" @click="resetDate(index)"></i>
+                            <el-rate class="card-date-star" v-model="star"></el-rate>
+                            <el-date-picker class="card-date-picker" v-model="date" type="datetime" value-format="yyyy-MM-dd HH:mm:ss" placeholder="choose date" size="small"></el-date-picker>
+
+                            <el-button class="card-date-btn" type="primary" size="small" @click="saveDate(index)">save</el-button>
+                        </div>
 					</div>
 				</div>
 			</div>
