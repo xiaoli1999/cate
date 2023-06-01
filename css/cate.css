@@ -1,5 +1,4 @@
 main {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -230,7 +229,7 @@ main .main .card-wrap .empty div {
 .dialog > img:hover {
   transform: scale(1.2);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   main {
     justify-content: center;
   }
@@ -239,6 +238,75 @@ main .main .card-wrap .empty div {
     max-width: 1200px;
     box-sizing: border-box;
     margin: 20px 50px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  main .main .comment {
+    flex-direction: column;
+    justify-content: center;
+  }
+  main .main .comment > img {
+    width: 46%;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto 24px;
+  }
+  main .main .card-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 26px 32px;
+  }
+  main .main .card-wrap .card {
+    margin: 0 auto 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .main {
+    margin: 20px 36px;
+  }
+  main .main .comment {
+    flex-direction: column;
+    justify-content: center;
+    margin: 26px auto;
+    padding: 24px 12px;
+    background: #fff;
+    min-height: auto;
+  }
+  main .main .comment .comment-intro {
+    font-size: 48px;
+  }
+  main .main .comment .comment-intro > div > p > img {
+    width: 40px;
+    margin-left: 6px;
+  }
+  main .main .comment .comment-info {
+    margin-left: 24px;
+  }
+  main .main .comment .comment-info .comment-top {
+    display: flex;
+    margin-top: 0;
+  }
+  main .main .comment .comment-info .comment-top .comment-top-empty {
+    width: 100px;
+    height: 68px;
+  }
+  main .main .comment .comment-info .comment-top .comment-top-avatar {
+    width: 100px;
+  }
+  main .main .comment .comment-info .comment-top .comment-top-avatar > img {
+    width: 100px;
+  }
+  main .main .card-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 26px 32px;
+  }
+  main .main .card-wrap .card {
+    margin: 0 auto 24px;
   }
 }
 /*# sourceMappingURL=cate.css.map */

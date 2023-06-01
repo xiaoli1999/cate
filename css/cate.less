@@ -1,5 +1,4 @@
 main {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
 
@@ -271,8 +270,8 @@ main {
     }
 }
 
+@media screen and (max-width: 1400px) {
 
-@media screen and (max-width:1200px) {
     main {
         justify-content: center;
 
@@ -281,6 +280,103 @@ main {
             max-width: 1200px;
             box-sizing: border-box;
             margin: 20px 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+
+    main {
+        .main {
+            .comment {
+                flex-direction: column;
+                justify-content: center;
+
+                > img {
+                    width: 46%;
+                    display: block;
+                    object-fit: contain;
+                    margin: 0 auto 24px;
+                }
+            }
+
+            .card-wrap {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                overflow: hidden;
+                margin: 26px 32px;
+
+                .card {
+                    margin: 0 auto 24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        .main {
+            margin: 20px 36px;
+
+            .comment {
+                flex-direction: column;
+                justify-content: center;
+                margin: 26px auto;
+                padding: 24px 12px;
+                background: #fff;
+                min-height: auto;
+
+                .comment-intro {
+                    font-size: 48px;
+
+                    > div {
+
+                        > p {
+
+                            > img {
+                                width: 40px;
+                                margin-left: 6px;
+                            }
+                        }
+                    }
+                }
+
+                .comment-info {
+                    margin-left: 24px;
+
+                    .comment-top {
+                        display: flex;
+                        margin-top: 0;
+
+                        .comment-top-empty {
+                            width: 100px;
+                            height: 68px;
+                        }
+
+                        .comment-top-avatar {
+                            width: 100px;
+
+                            > img {
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card-wrap {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                overflow: hidden;
+                margin: 26px 32px;
+
+                .card {
+                    margin: 0 auto 24px;
+                }
+            }
         }
     }
 }
