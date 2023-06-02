@@ -1,9 +1,7 @@
 new Vue({
-	el: '#app',
+	el: '#app', /* 挂载app节点 */
 	data: function() {
 		return {
-			visible: false,
-			title: 'test',
 			selectOption: [
 				{
 					img: './image/Gunkan.PNG',
@@ -44,6 +42,7 @@ new Vue({
 			],
 			selectIndex: 0,
 			showComment: false,
+			/* comment card list */
 			cardList: [
 				{
 					img: './image/Gunkan.PNG',
@@ -78,6 +77,7 @@ new Vue({
 					show: false
 				}
 			],
+			/* comment form */
 			commentForm: {
 				img: '',
 				tag: ['rice', 'cucumber'],
@@ -87,18 +87,21 @@ new Vue({
 			},
 			inputVisible: false,
 			inputValue: '',
+			/* show avatar popup */
 			showSelectAvatar: false,
 			star: 0,
 			date: ''
 		}
 	},
 	methods: {
+		/* show tag input */
 		showInput() {
 			this.inputVisible = true;
 			this.$nextTick(_ => {
 				this.$refs.saveTagInput.$refs.input.focus();
 			});
 		},
+		/* add tag */
 		handleInputConfirm() {
 			let inputValue = this.inputValue;
 			if (inputValue) {
@@ -107,10 +110,12 @@ new Vue({
 			this.inputVisible = false;
 			this.inputValue = '';
 		},
+		/* select avatar */
 		selectAvatar (url) {
 			this.commentForm.img = url
 			this.showSelectAvatar = false
 		},
+		/* save comment info */
 		save () {
 			if (!this.commentForm.img) return this.$message.error('please choose avatar')
 			if (!this.commentForm.comment) return this.$message.error('please comment')
@@ -118,6 +123,7 @@ new Vue({
 			this.cardList.unshift({ ...this.commentForm, show: false })
 			this.resetForm()
 		},
+		/* reset comment form */
 		resetForm() {
 			this.commentForm = {
 				img: '',
@@ -127,11 +133,13 @@ new Vue({
 				date: ''
 			}
 		},
+		/* save date and star */
 		saveDate (i) {
 			this.cardList[i].star = this.star
 			this.cardList[i].date = this.date
 			this.resetDate(i)
 		},
+		/* reset date and star */
 		resetDate (i) {
 			this.cardList[i].show = false
 			this.star = 0

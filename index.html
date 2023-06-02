@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./css/index.css">
 	<link rel="stylesheet" href="./css/750.css">
 	<link rel="stylesheet" href="./css/cate.css">
+	<!--引入element ui-->
 	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 	<script src="./js/index.js"></script>
 </head>
@@ -160,6 +161,7 @@
 		<main>
 			<div class="main">
 				<div class="title">food record</div>
+				<!--comment layout-->
 				<div class="comment">
 					<img src="./image/Sushi.png" alt="">
 					<div v-if="!showComment" class="comment-intro">
@@ -193,6 +195,7 @@
 						</div>
 					</div>
 				</div>
+				<!--comment card layout-->
 				<div class="card-wrap">
 					<div v-if="!showComment" class="card empty" @click="showComment = true">
 						<img src="./image/Add.png" alt="">
@@ -224,6 +227,7 @@
 			</div>
 		</main>
 
+		<!--choose avatar dialog-->
 		<el-dialog title="choose avatar" :visible.sync="showSelectAvatar" width="340px">
 			<div class="dialog">
 				<img src="./image/Gunkan.PNG" alt="" @click="selectAvatar('./image/Gunkan.PNG')">
@@ -237,8 +241,9 @@
 	</div>
 </body>
 
+<!--import vue.js-->
 <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
-<!-- import JavaScript -->
+<!--import element ui -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
 
